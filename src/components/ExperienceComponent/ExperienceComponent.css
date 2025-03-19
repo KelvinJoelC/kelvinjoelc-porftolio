@@ -1,0 +1,135 @@
+.bento{
+    display: grid;
+    grid-auto-rows: 50px;
+    gap: 4px;
+    
+    font-size: 0.8rem;
+    grid-template-areas:
+        "pro9 pro9 pro9 pro9"
+        "pro9 pro9 pro9 pro9"
+        "pro10 pro11 pro11 pro11"
+        "pro10 pro8 pro17 pro17"
+        "pro1 pro2 pro3 pro3"
+        "pro6 pro12 pro7 pro7"
+        "pro6 pro14 pro7 pro7"
+        "pro5 pro5 pro5 pro13"
+        "pro5 pro5 pro5 pro4"
+        "pro5 pro5 pro5 pro16"
+        "pro5 pro5 pro5 pro15"
+        ;    
+}
+
+.bento__item{
+    
+    /* Desing */
+    background-color: #1c1c1c;
+    border: 2px solid #2e2e2e;
+    
+    /* border: 2px solid rgb(96 139 168); */
+    border-radius: 15px; 
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.accenture{
+    background: linear-gradient(135deg, rgba(155,0,245,1) 0%, rgba(172,5,255,1) 25%, rgba(5,222,255,1) 100%);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+    font-weight: bold;
+    font-size: 2rem;
+
+}
+
+@media (min-width: 600px){
+    .bento{
+        grid-template-areas: 
+        "pro11  pro11  pro7  pro7  pro8   pro8"
+        "pro11  pro11  pro7  pro7  pro12  pro12"
+        "pro17  pro6   pro6  pro6  pro6   pro13"
+        "pro10  pro10  pro9  pro9  pro9   pro14"
+        "pro10  pro10  pro9  pro9  pro9   pro3"
+        "pro15  pro15  pro15 pro15 pro15  pro16"
+        "pro5   pro5   pro5  pro5  pro1   pro2"
+        "pro5   pro5   pro5  pro5  pro4   pro4"
+        "pro5   pro5   pro5  pro5  pro4   pro4"
+        "pro5   pro5   pro5  pro5  pro4   pro4"
+    }
+    .bento__item{
+        padding: 10px;
+    }
+}
+
+@media (min-width: 900px){
+    .bento{
+        grid-template-areas: 
+        "pro1 pro1 pro1 pro2 pro6  pro6  pro7  pro7  pro8   pro8   pro8 "
+        "pro1 pro1 pro1 pro3 pro6  pro6  pro7  pro7  pro12  pro12  pro12 "
+        "pro4 pro4 pro4 pro4 pro9  pro9  pro9  pro9  pro9   pro13  pro14  "
+        "pro5 pro5 pro5 pro5 pro9  pro9  pro9  pro9  pro9   pro15  pro16 "
+        "pro5 pro5 pro5 pro5 pro10 pro10 pro11 pro11 pro17  pro17  pro17 "
+        "pro5 pro5 pro5 pro5 pro10 pro10 pro11 pro11 pro17  pro17  pro17 "
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 85% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+
+/* grid-template-areas:
+        "pro pro pro pro pro pro pro"
+        "pro pro pro pro pro pro pro"
+        "pro pro pro pro pro pro pro"
+        "pro pro pro pro pro pro pro"
+        "pro pro pro pro pro pro pro"
+        "pro pro pro pro pro pro pro"
+        "pro pro pro pro pro pro pro"
+        "pro pro pro pro pro pro pro"; */
+
+
+
+
+/* .bento{
+    padding-bottom: 10rem;
+    display: grid;
+    gap: 4px;
+    height: 650px;
+    grid-auto-rows: 75px;
+    justify-items: stretch;
+    align-content: stretch;
+    grid-template-areas: 
+    "pro1 pro2 pro6 pro6  pro6  pro7  pro7  pro8   pro8   pro8 "
+    "pro1 pro3 pro6 pro6  pro6  pro7  pro7  pro12  pro12  pro12 "
+    "pro4 pro4 pro4 pro9  pro9  pro9  pro9  pro9   pro13  pro14  "
+    "pro5 pro5 pro5 pro9  pro9  pro9  pro9  pro9   pro15  pro16 "
+    "pro5 pro5 pro5 pro10 pro10 pro11 pro11 pro17  pro17  pro17 "
+    "pro5 pro5 pro5 pro10 pro10 pro11 pro11 pro17  pro17  pro17 "    
+    
+}
+
+.bento__item{
+    min-width: 100px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(96 139 168); 
+    
+    text-align: center;
+    font-weight: bold;
+    font-size: clamp(12px, 2vw, 24px); 
+    
+} */

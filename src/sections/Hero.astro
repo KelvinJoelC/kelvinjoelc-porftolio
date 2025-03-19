@@ -1,15 +1,79 @@
 <section>
-    <h2>Hello, I'm Kelvin Carreno,
-        <br/>Front End Developer.</h2>
-    </span>
-    <h3>
-        Gran desarrollador de Front End con experiencia en tecnologías como HTML, CSS, JavaScript, React,entre otras.
-    </h3>
-    <button type="button" >Download Resume</button>
+    <div class="hero">
+        <h1 class="heading-1">Hello, I'm <span>Kelvin.</span></h1>
+        <p class="heading-2">I'm a <span class="sketch-highlight"/>Front End Developer.</span></p>
+        <!-- TODO: Necesario? <h3>
+            Gran desarrollador de Front End con experiencia en tecnologías como HTML, CSS, JavaScript, React,entre otras.
+        </h3> -->
+        <button type="button" >Download Resume</button>
+    </div>
+    
 </section>
 
 <style>
     section{
-        background-color: antiquewhite;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        align-items: center;
+        justify-items: center;
+        height: 100vh;
     }
+
+    .hero {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        height: 75%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .heading-1 {
+        text-align: center;
+        color: black;
+        margin: 2.6rem;
+        font-size: 2.8rem;
+        animation-name: moveInLeft;
+        animation-duration: 1.4s;
+        & span {
+        color: #ffe066;
+        }
+    }
+
+    .heading-2 {
+        animation-name: moveInRight;
+        animation-duration: 1.4s;
+    }
+
+    @keyframes moveInLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-10rem);
+        }
+        /* 80% {
+            transform: translateX(1rem);
+        } */
+        100% {
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+
+    @keyframes moveInRight {
+        0% {
+            opacity: 0;
+            transform: translateX(10rem);
+        }
+        /* 80% {
+            transform: translateX(1rem);
+        } */
+        100% {
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+
 </style>
