@@ -1,57 +1,85 @@
 ---
-// import { Icon } from 'astro-icon/components'
 import './ExperienceComponent.css'
 ---
 <div class="bento">
-    <div class="bento__item" style="grid-area: pro1;">
-        <span class="item-pro1">European <br> banks</span>
+    <div id="accenture" class="bento__item accenture" style="grid-area: item-0">
+        <span  class="item-pro9">Accenture</span>        
     </div>
-    <div class="bento__item scale-hover" style="grid-area: pro2">
-        <span class="item-pro2">4 Cientes satisfechos</span>
-    </div>
-    <div class="bento__item" style="grid-area: pro3">
-        <span class="item-pro3">Multitasking</span>
-    </div>
-    <div class="bento__item" style="grid-area: pro4">
-        <span class="item-pro4">App Developer</span>
-    </div>
-    <div class="bento__item" style="grid-area: pro5">
-        <span class="item-pro4">Technologies aplicadas</p>
-    </div>
-    <div class="bento__item" style="grid-area: pro6;">
+    <div class="bento__item icon" style="grid-area: item-1;">
         <img src="angular.svg" alt="Angular logo"/>
     </div>
-    <div class="bento__item scale-hover" style="grid-area: pro7">
-        <img src="react.svg" alt="React logo"/>
+    <div class="bento__item icon" style="grid-area: item-2;">
+        <img src="git.svg" alt="Git logo"/>
     </div>
-    <div class="bento__item" style="grid-area: pro8">
-        <span class="item-pro8">Integration Arquitecture</span>
+    <div class="bento__item" style="grid-area: item-3">
+        <span class="item-pro3">Micro Frontends</span>
     </div>
-    <div class="bento__item accenture"  style="grid-area: pro9">
-        <span class="item-pro9">Accenture</span>        
+    <div class="bento__item" style="grid-area: item-4">
+        <span class="item-pro3">API Development </span>
     </div>
-    <div class="bento__item" style="grid-area: pro10">
-        <span class="item-pro10">+3 Años de expereriencia</span>        
+    <div class="bento__item" style="grid-area: item-5">
+        <span class="item-pro3">Advance <br>TypeScript|Css </span>
     </div>
-    <div class="bento__item" style="grid-area: pro11">
+    <div class="bento__item text-bigger" style="grid-area: item-6">
+        <ul class="dynamic-texts">
+            <li><span>Scrum</span></li>
+            <li><span>Jira</span></li>
+            <li><span>Confluence</span></li>
+        </ul>
+    </div>
+    <div class="bento__item" style="grid-area: item-7">
+        <span class="item-pro3">Integration Architect</span>
+    </div>
+    <div class="bento__item" style="grid-area: item-8">
+        <span class="item-pro3">+3 Años de expereriencia</span>
+    </div>
+    <div class="bento__item" style="grid-area: item-9">
         <span class="item-pro11">Frontend Developer</span>        
     </div>
-    <div class="bento__item" style="grid-area: pro12">
-        <span class="item-pro12">Salesforce</span> 
+    <div class="bento__item icon" style="grid-area: item-10">
+        <img src="react.svg" alt="React logo"/>
     </div>
-    <div class="bento__item" style="grid-area: pro13">
-        <span class="item-pro13">Microfrontends</span> 
+    <div class="bento__item icon" style="grid-area: item-11">
+        <img src="salesforce.svg" alt="Salesforce logo"/>
     </div>
-    <div class="bento__item" style="grid-area: pro14">
-        <span class="item-pro14">Desarrollo de aplicaciones</span>
+    <div class="bento__item icon" style="grid-area: item-11">
+        <img src="salesforce.svg" alt="Salesforce logo"/>
     </div>
-    <div class="bento__item" style="grid-area: pro15">
-        <span class="item-pro15">Integraciones</span>
-    </div>
-    <div class="bento__item" style="grid-area: pro16">
-        <span class="item-pro16">Gestión de apis</span>
-    </div>
-    <div class="bento__item" style="grid-area: pro17">
-        <span class="item-pro16">Migration</span>
-    </div>    
 </div>
+
+<script>
+
+    const descriptions : string[]= [
+        "Accenture: Ha sido mi primer trabajo en el mundo de la tecnología, donde he aprendido mucho y he tenido la oportunidad de trabajar en proyectos muy interesantes.",
+        "Desarrollo de aplicaciones frontend con Angular (v8 a v13), siguiendo principios de arquitectura escalable, modularidad y buenas prácticas de desarrollo.",
+        "Uso de Git y herramientas como GitHub/GitLab para gestionar ramas de desarrollo, colaboración en equipo y control eficiente del historial de cambios en el código.",
+        "Implementation of micro frontend architecture in banking projects, enabling scalability and efficient maintenance of large applications with multiple development teams.",
+        "Development and integration of REST APIs to connect frontend with backend services, ensuring efficient system communication and interoperability.",
+        "TypeScript for web development, applying object-oriented programming to improve maintainability and code robustness and precise web layout based on Figma and InVision designs, utilizing SCSS and responsive design.",
+        "Scrum methodology in all projects with daily meetings, sprint planning, and iterative feature delivery. Jira for tracking development progress. Confluence for documenting processes, technical decisions, and project updates.",
+        "Definition of project structures, technology selection, and technical solution design to ensure system scalability and maintainability.",
+        "Passionate Frontend Developer with 3+ years of experience in designing, developing, and optimizing scalable web applications.",
+        "Frontend Developer",
+        "Built reusable web components using Stencil.js,Designed and implemented RESTful APIs and database models using NestJS and TypeORM, Developed and documented React UI components in an isolated environment.",
+        "Development and maintenance of applications within the Salesforce CRM platform. Implemented Lightning Web Components (LWC) to enhance user experience, optimize system performance, and integrate with SAP", 
+    ]
+    document.addEventListener("DOMContentLoaded", () => {
+      const accenture = document.getElementById("accenture");
+      const clickables = document.querySelectorAll(".bento__item");
+  
+      clickables.forEach(div => {
+        div.addEventListener("click", (event: Event) => {
+        const target = (event.target as any).closest(".bento__item");
+        if (accenture) {
+            const clickedUser: number = target.style.gridArea.replace("item-", "");
+            accenture.innerText = `${descriptions[clickedUser]}`;
+            accenture.classList.add("resize");
+            accenture.classList.add("scale-hover");
+            
+            }
+        });
+      });
+    });
+
+
+  </script>
