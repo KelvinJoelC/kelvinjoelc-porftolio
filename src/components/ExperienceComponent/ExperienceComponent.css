@@ -16,8 +16,7 @@
         "item-6 item-6 item-2 item-2"
         "item-5 item-5 item-2 item-2"
         "item-10 item-10 item-10 item-11"
-        "item-10 item-10 item-10 item-11"
-        
+        "item-10 item-10 item-10 item-11" 
 }
 
 .icon img{
@@ -29,7 +28,7 @@
     
     /* Desing */
     background-color: var(--color-background-light);
-    border: 2px solid #2e2e2e;
+    border: 2px solid #2e2e2e; 
     cursor: pointer;
     
     /* border: 2px solid rgb(96 139 168); */
@@ -39,9 +38,30 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    
-}
+    position: relative;
+    overflow: hidden;
+    *{
+        z-index: 1;
+    }
 
+    &:focus::before{
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(135deg, #9b00f5 0%, #ac05ff 25%, #05deff );
+        animation: rotateBorder 5s linear infinite;
+        transition: all 0.2s linear;
+    }
+
+    &:focus&::after{
+        content: "";
+        position: absolute;
+        background-color: var(--color-background-light);       
+        inset: 2px;
+    }
+}
+  
 .accenture{
     background: linear-gradient(135deg, #9b00f5 0%, #ac05ff 25%, #05deff 100%);
     background-size: 400% 400%;
@@ -107,20 +127,27 @@
    }
 }
 
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 @media (min-width: 600px){
     .bento{
         grid-template-areas: 
-        "pro11  pro11  pro7  pro7  pro8   pro8"
-        "pro11  pro11  pro7  pro7  pro12  pro12"
-        "pro17  pro6   pro6  pro6  pro6   pro13"
-        "pro10  pro10  pro9  pro9  pro9   pro14"
-        "pro10  pro10  pro9  pro9  pro9   pro3"
-        "pro15  pro15  pro15 pro15 pro15  pro16"
-        "pro5   pro5   pro5  pro5  pro1   pro2"
-        "pro5   pro5   pro5  pro5  pro4   pro4"
-        "pro5   pro5   pro5  pro5  pro4   pro4"
-        "pro5   pro5   pro5  pro5  pro4   pro4"
+        "item-8 item-8  item-9  item-9  item-7   item-7"
+        "item-8 item-8  item-9  item-9  item-7   item-7"
+        "item-11 item-0  item-0  item-0  item-0   item-5"
+        "item-11 item-0  item-0  item-0  item-0   item-5"
+        "item-10 item-0  item-0  item-0  item-0   item-4"
+        "item-10 item-0  item-0  item-0  item-0   item-4"
+        "item-1 item-1  item-3  item-3  item-2   item-2"
+        "item-1 item-1  item-6  item-6  item-2   item-2"
     }
     .bento__item{
         padding: 10px;
